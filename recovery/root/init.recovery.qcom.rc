@@ -73,4 +73,3 @@ on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=tru
 
 on property:vendor.sys.listeners.registered=true
     start vendor.keymint-qti
-    start vendor.weaver_nxp
