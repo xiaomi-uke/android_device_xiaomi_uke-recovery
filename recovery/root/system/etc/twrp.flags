@@ -24,17 +24,17 @@
 
 # Persistent Firmware & Properties
 /persist               ext4    /dev/block/bootdevice/by-name/persist                              flags=display="Persist"
-/persist_image         emmc    /dev/block/bootdevice/by-name/persist                              flags=display="Persist";flashimg=1;backup=1
+/persist_image         emmc    /dev/block/bootdevice/by-name/persist                              flags=display="Persist";backup=1
 
 # Modem/Firmware partitions
 /modem                 vfat    /dev/block/bootdevice/by-name/modem                                flags=display="Modem";slotselect;fsflags="ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0 wait"
-/modem_img             emmc    /dev/block/bootdevice/by-name/modem                                flags=backup=1;display="Modem";slotselect;flashimg=1
+/modem_img             emmc    /dev/block/bootdevice/by-name/modem                                flags=backup=1;display="Modem";slotselect
 
 /bluetooth             vfat    /dev/block/bootdevice/by-name/bluetooth                            flags=display="Bluetooth";slotselect;fsflags="ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0 wait"
-/bluetooth_image       emmc    /dev/block/bootdevice/by-name/bluetooth                            flags=display="Bluetooth";slotselect;backup=1;flashimg=1;subpartitionof=/modem_img
+/bluetooth_image       emmc    /dev/block/bootdevice/by-name/bluetooth                            flags=display="Bluetooth";slotselect;backup=1;subpartitionof=/modem_img
 
 /dsp                   vfat    /dev/block/bootdevice/by-name/dsp                                  flags=display="DSP";slotselect
-/dsp_image             emmc    /dev/block/bootdevice/by-name/dsp                                  flags=display="DSP";slotselect;backup=1;flashimg=1;subpartitionof=/modem_img
+/dsp_image             emmc    /dev/block/bootdevice/by-name/dsp                                  flags=display="DSP";slotselect;backup=1;subpartitionof=/modem_img
 
 # EFS/IMEI partitions
 /efs1           	   emmc    /dev/block/bootdevice/by-name/modemst1                             flags=backup=1;display="EFS / IMEI"
