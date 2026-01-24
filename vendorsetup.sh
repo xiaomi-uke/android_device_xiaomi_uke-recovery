@@ -22,7 +22,7 @@
 FDEVICE="peridot"
 
 fox_get_target_device() {
-	local script_path="${BASH_SOURCE[0]}"
+	export script_path="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 	if echo "$script_path" | grep -q "$FDEVICE"; then
 		FOX_BUILD_DEVICE="$FDEVICE"
 	elif echo "$0" | grep -q "$FDEVICE"; then
@@ -61,6 +61,7 @@ if [ "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# KernelSU / Magisk Support
 	# export FOX_DELETE_MAGISK_ADDON=1
+	export FOX_USE_SPECIFIC_MAGISK_ZIP="$script_path/prebuilt/Magisk-v30.6.zip"
 	export FOX_MOVE_MAGISK_INSTALLER_TO_RAMDISK=1
 	export FOX_ENABLE_KERNELSU_SUPPORT=1
 	export FOX_ENABLE_KERNELSU_NEXT_SUPPORT=1
