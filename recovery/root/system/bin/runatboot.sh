@@ -48,6 +48,12 @@ load_drivers() {
 SCRIPT_NAME="$(basename "$0")"
 
 LOGMSG "---$SCRIPT_NAME start---"
-load_drivers;
+
+load_drivers
+
+LOGMSG "Resetting touchscreen post screen blank..."
+echo 1 > /sys/devices/platform/goodix_ts.0/irq_info
+echo 1 > /sys/devices/platform/goodix_ts.0/reset
+
 LOGMSG "---$SCRIPT_NAME end---"
 exit 0
