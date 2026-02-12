@@ -21,8 +21,8 @@
 # screen settings
 # e.g. if the aspect ratio is 19:9 then use 19*120 (=2280)
 OF_SCREEN_H := 2400
-#OF_STATUS_H := 100
-#OF_HIDE_NOTCH := 1
+OF_STATUS_H := 115
+OF_HIDE_NOTCH := 1
 OF_CLOCK_POS := 1
 OF_STATUS_INDENT_LEFT := 56
 OF_STATUS_INDENT_RIGHT := 48
