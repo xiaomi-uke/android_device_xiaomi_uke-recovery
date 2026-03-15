@@ -69,9 +69,9 @@ if [ "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# Fox Settings
 	export FOX_VARIANT="crypto"
-	export FOX_BUILD_TYPE="Stable"
+	export FOX_BUILD_TYPE="Beta"
 	export FOX_SETTINGS_ROOT_DIRECTORY="/persist"
-	export FOX_MAINTAINER_PATCH_VERSION="1"
+	export FOX_MAINTAINER_PATCH_VERSION="0"
 	export FOX_ALLOW_EARLY_SETTINGS_LOAD=1
 	export FOX_RESET_SETTINGS="disabled"
 else
