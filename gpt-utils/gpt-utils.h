@@ -90,7 +90,7 @@ extern "C" {
     "keymaster", "modem", "modemfirmware", "pvmfw", "qupfw", \
     "qweslicstore", "recovery", "shrm", "tz", "uefi", "uefisecapp", \
     "vbmeta", "vbmeta_system", "vendor_boot", "bluetooth", \
-    "xbl_config_nof", "xbl_ramdump"
+    "xbl_ramdump"
 
 #define AB_PTN_LIST \
     PTN_SWAP_LIST, \
