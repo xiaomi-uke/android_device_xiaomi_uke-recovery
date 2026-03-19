@@ -36,7 +36,7 @@ OF_NO_TREBLE_COMPATIBILITY_CHECK := 1
 OF_DYNAMIC_FULL_SIZE := 9122611200
 
 # number of list options before scrollbar creation
-OF_OPTIONS_LIST_NUM := 9
+OF_OPTIONS_LIST_NUM := 11
 
 # A/B with recovery partition
 OF_AB_DEVICE_WITH_RECOVERY_PARTITION := 1
