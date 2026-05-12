@@ -168,18 +168,10 @@ TW_EXCLUDE_APEX := true
 TW_HAS_EDL_MODE := true
 
 # Haptic
-FIXED_HAPTICS := true
-
-ifeq ($(FIXED_HAPTICS),true)
-   TW_SUPPORT_INPUT_AIDL_HAPTICS := true
-   TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
-   TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
-else
-   TW_NO_HAPTICS := true
-endif
+TW_NO_HAPTICS := true
 
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko focaltech_3683g.ko focaltech_touch.ko goodix_core.ko goodix_ts.ko nxp-nci.ko qti_battery_charger.ko xiaomi_touch.ko"
+TW_LOAD_VENDOR_MODULES := "q6_pdr_dlkm.ko q6_notifier_dlkm.ko snd_event_dlkm.ko gpr_dlkm.ko spf_core_dlkm.ko adsp_loader_dlkm.ko xiaomi-touch.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone48/temp"
 TW_BATTERY_SYSFS_WAIT_SECONDS := 6

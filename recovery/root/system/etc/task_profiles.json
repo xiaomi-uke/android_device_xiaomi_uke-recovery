@@ -21,6 +21,11 @@
       "File": "top-app/cpus"
     },
     {
+      "Name": "AudioAppCapacityCPUs",
+      "Controller": "cpuset",
+      "File": "audio-app/cpus"
+    },
+    {
       "Name": "MemStats",
       "Controller": "memory",
       "File": "memory.stat"
@@ -81,6 +86,11 @@
       "Name": "FreezerState",
       "Controller": "freezer",
       "File": "cgroup.freeze"
+    },
+    {
+      "Name": "CgroupProcs",
+      "Controller": "cgroup2",
+      "File": "cgroup.procs"
     }
   ],
 
@@ -190,6 +200,19 @@
       ]
     },
     {
+      "Name": "MISFPerformance",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpu",
+            "Path": "misf"
+          }
+        }
+      ]
+    },
+    {
       "Name": "RealtimePerformance",
       "Actions": [
         {
@@ -224,6 +247,19 @@
           {
             "Controller": "cpu",
             "Path": "camera-daemon"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "AudioAppPerformance",
+      "Actions" : [
+        {
+          "Name" : "JoinCgroup",
+          "Params" :
+          {
+            "Controller": "schedtune",
+            "Path": "audio-app"
           }
         }
       ]
@@ -438,7 +474,19 @@
         }
       ]
     },
-
+    {
+      "Name": "ProcessCapacityMISF",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpuset",
+            "Path": "misf"
+          }
+        }
+      ]
+    },
     {
       "Name": "ServiceCapacityLow",
       "Actions": [
@@ -475,6 +523,46 @@
           {
             "Controller": "cpuset",
             "Path": "camera-daemon"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "AudioAppCapacity",
+      "Actions" : [
+        {
+          "Name" : "JoinCgroup",
+          "Params" :
+          {
+            "Controller": "cpuset",
+            "Path": "audio-app"
+          }
+        }
+      ]
+    },
+
+    {
+      "Name": "BlkIOForeground",
+      "Actions" : [
+        {
+          "Name" : "JoinCgroup",
+          "Params" :
+          {
+            "Controller": "blkio",
+            "Path": ""
+          }
+        }
+      ]
+    },
+    {
+      "Name": "BlkIOBackground",
+      "Actions" : [
+        {
+          "Name" : "JoinCgroup",
+          "Params" :
+          {
+            "Controller": "blkio",
+            "Path": "bg"
           }
         }
       ]
@@ -592,7 +680,7 @@
           "Params":
           {
             "Name": "MemSoftLimit",
-            "Value": "16MB"
+            "Value": "16M"
           }
         },
         {
@@ -614,7 +702,7 @@
           "Params":
           {
             "Name": "MemSoftLimit",
-            "Value": "512MB"
+            "Value": "512M"
           }
         },
         {
@@ -636,6 +724,32 @@
           {
             "Controller": "memory",
             "Path": "system"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "MemoryProtectedProcess",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "memory",
+            "Path": "protected-app"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "MemoryFreezeProcess",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "memory",
+            "Path": "freeze-app"
           }
         }
       ]
@@ -717,7 +831,7 @@
     },
     {
       "Name": "InputPolicy",
-      "Profiles": [ "RealTimeInputScheduling", "MaxPerformance", "ProcessCapacityMax", "TimerSlackNormal" ]
+      "Profiles": [ "MaxPerformance", "ProcessCapacityMax", "TimerSlackNormal" ]
     }
   ]
 }
