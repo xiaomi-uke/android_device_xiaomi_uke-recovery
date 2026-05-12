@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/peridot
+DEVICE_PATH := device/xiaomi/uke
 
 # Base product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -19,9 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Configure twrp common.mk
 $(call inherit-product, vendor/twrp/config/common.mk)
-
-# Device-specific OrangeFox configuration
-$(call inherit-product, $(DEVICE_PATH)/fox_peridot.mk)
 
 PRODUCT_PACKAGES += \
     bootctrl.xiaomi_sm8635.recovery \

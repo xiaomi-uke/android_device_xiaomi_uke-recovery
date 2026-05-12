@@ -17,10 +17,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_peridot.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_uke.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_peridot-user \
-    twrp_peridot-userdebug \
-    twrp_peridot-eng
+    twrp_uke-user \
+    twrp_uke-userdebug \
+    twrp_uke-eng
 #
